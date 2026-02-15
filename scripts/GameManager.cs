@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
+/*
+    This class contains the functions we need to manage the process within the game. 
+    It includes methods for creating players, starting the game, and handling player matches.
+*/
+
 namespace PlayerTournament
 {
     internal static class GameManager
@@ -19,24 +24,48 @@ namespace PlayerTournament
 
             string name;
             int health, attack, defense;
-            Console.WriteLine($"-- Player {playerCode} --");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"Player {playerCode}");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.Write("Enter the player name: ");
+            Console.ResetColor();
             name = Console.ReadLine();
 
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("\nPlayer Attribitues");
+            Console.ResetColor();
+
             do
             {
-                Console.WriteLine("\nTotal of Health, Attack and Defense must be equals 100 !\n");
-                Console.Write("Enter the player health: ");
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("Total of Health, Attack and Defense must be equals 100 !\n");
+                Console.ResetColor();
+
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write("Enter the player ");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("health");
+                Console.ResetColor();
+                Console.Write(": ");
                 health = Convert.ToInt32(Console.ReadLine());
 
-                Console.Write("Enter the player attack: ");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write("Enter the player ");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("attack");
+                Console.ResetColor();
+                Console.Write(": ");
                 attack = Convert.ToInt32(Console.ReadLine());
 
-                Console.Write("Enter the player defense: ");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write("Enter the player ");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write("defense");
+                Console.ResetColor();
+                Console.Write(": ");
                 defense = Convert.ToInt32(Console.ReadLine());
 
-                Console.WriteLine();
+                Console.Clear();
             } while ((health + attack + defense != 100) || (health <= 0) || (attack <= 0) || (defense <= 0));
 
             Player newPlayer = new Player(name, health, attack, defense);
@@ -63,8 +92,8 @@ namespace PlayerTournament
 
                 // Matches
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"-- {Player1.Name} VS {Player2.Name} --");
-                Console.ResetColor();
+                Console.WriteLine($"- {Player1.Name} VS {Player2.Name} -");
+                Console.ResetColor(); Console.WriteLine();
                 
                 bool player1Side = SideSelection();
 

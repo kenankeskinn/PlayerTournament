@@ -1,11 +1,9 @@
 ﻿using System;
 
 /* 
-    This class represents a player in the tournament. It contains attributes such as name, health, attack, and defense, as well as methods to handle damage and reset character stats.
-    
-    The GetDamage method calculates the damage taken by the player based on the attack value and updates the player's health and defense accordingly.
-    
-    The ResetCharacterStats method resets the player's defense to its maximum value. 
+    This class represents a player in the tournament. 
+    It contains attributes such as name, health, attack, and defense, 
+    as well as methods to handle damage and reset character stats.
 */
 
 namespace PlayerTournament
